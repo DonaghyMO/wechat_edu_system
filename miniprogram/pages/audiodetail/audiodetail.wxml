@@ -1,0 +1,10 @@
+<!--pages/audiodetail/audiodetail.wxml-->
+<view class="audioContainer">
+    <audio style="display:flex;justify-content:center;" id="audio-{{title}}" src="{{audioUrl}}" type="audio/mpeg" controls></audio>
+    <view class="audio-info">
+        <view class="title-box">{{title}}</view>
+        <view class="description-box">{{description}}</view>
+    </view>
+</view>
+
+

@@ -1,0 +1,113 @@
+.userInfoContainer {
+    width: 100%;
+    font-size: 18px;
+}
+
+.buttonContainer {
+    margin-top: 100%;
+}
+
+button {
+    background: #a61b29;
+    color: white;
+}
+
+/* 悬停样式 */
+button:hover {
+    background: #c45a65;
+
+}
+
+/* 滚动通知栏的样式 */
+.notice-container {
+    width: 100%;
+    height: 40px;
+    /* 设置通知栏的高度 */
+    overflow: hidden;
+    /* 隐藏溢出部分 */
+    background-color: #E64E4E;
+    /* 设置背景色 */
+    display: flex;
+    color: #FFF;
+    /* 白色文字 */
+}
+
+.notice-item {
+    line-height: 40px;
+    /* 设置行高，使文本垂直居中 */
+    padding: 0 20px;
+    /* 设置左右内边距 */
+    color: #FFF;
+    /* 设置文本颜色 */
+    font-size: 14px;
+    /* 设置字体大小 */
+}
+
+notice-container1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #E64E4E;
+    /* 红色背景 */
+    padding: 10px 20px;
+    /* 内边距 */
+    color: #FFF;
+    /* 白色文字 */
+    font-size: 14px;
+    /* 字体大小 */
+    position: relative;
+}
+
+.avatar-container {
+    width: 150px;
+    /* 圆形容器的宽度 */
+    height: 150px;
+    /* 圆形容器的高度 */
+    border-radius: 50%;
+    /* 设置圆形边框 */
+    overflow: hidden;
+    /* 隐藏溢出的内容，确保图片显示在圆形容器内 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    /* 可选：设置圆形容器的背景颜色 */
+}
+
+.avatar-image {
+    width: 100%;
+    /* 图片的宽度为圆形容器的宽度 */
+    height: 100%;
+    /* 图片的高度为圆形容器的高度 */
+    object-fit: cover;
+    /* 缩放图片，以适应圆形容器 */
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+}
+.info-container{
+    border-radius: 5px;
+    padding: 2%;
+    background-color: #4c1f24; /* 中国红 */
+}
+/* 通知标题样式 */
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* 深灰色 */
+    margin-bottom: 5px;
+  }
+  .content {
+    font-size: 14px;
+    color: #666; /* 中灰色 */
+  }
+  .text-info {
+    flex: 1;
+    margin-top: 5px;
+    background-color: #E64E4E;
+    border-radius: 8px;
+  }

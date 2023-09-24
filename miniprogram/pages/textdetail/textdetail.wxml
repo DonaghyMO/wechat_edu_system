@@ -1,0 +1,8 @@
+<!--pages/textdetail/textdetail.wxml-->
+<view class="textContainer">
+    <view style="text-align: center;font-weight: bold ;">{{title}}</view>
+    <text style="margin-top: 1%;">
+        {{content}}
+    </text>
+</view>
+

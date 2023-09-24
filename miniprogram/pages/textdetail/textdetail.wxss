@@ -1,0 +1,4 @@
+/* pages/textdetail/textdetail.wxss */
+.textContainer{
+    margin-top: 0%;
+}

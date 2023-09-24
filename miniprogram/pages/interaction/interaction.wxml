@@ -1,0 +1,9 @@
+<view class="teacher-list">
+    <view wx:for="{{teachers}}" wx:key="index" class="teacher-item">
+        <image class="teacher-icon" src="/images/teacher.svg"></image>
+        <view class="teacher-text" bindtap="interactTeacher" data-teacher_id="{{item.teacher_id}}">
+            <text class="teacher-title">教师</text>
+            <text class="teacher-content">{{item.username}}</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,21 @@
+/* pages/audiodetail/audiodetail.wxss */
+.audioContainer{
+    margin-top: 0%;
+}
+.audio-info{
+    margin-top: 5%;
+    background-color: rgb(231, 231, 229);
+    border-radius: 20px;
+    border-color: rgb(231, 231, 229);
+    white-space: normal;
+}
+.title-box{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.description-box{
+    font-size: 15px;
+    color: rgb(37, 34, 34);
+    white-space: normal;
+}

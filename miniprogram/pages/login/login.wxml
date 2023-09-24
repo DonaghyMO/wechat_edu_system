@@ -1,0 +1,15 @@
+<!--pages/login/login.wxml-->
+<view class="login-container">
+  <image src="{{userAvatarUrl}}" class="logo"></image>
+  <text class="nick-name">欢迎你：{{ userNickname }}</text>
+  
+  <input placeholder="用户名" class="input-field" bindinput="inputUsername"></input>
+  <input type="password" placeholder="密码" class="input-field" bindinput="inputPassword"></input>
+  
+  <button class="login-button" bindtap="login" data-user_type="student">登录</button>
+  
+  <view class="register-link">
+    <text>没有账号？</text>
+    <navigator url="/pages/register/register">注册</navigator>
+  </view>
+</view>

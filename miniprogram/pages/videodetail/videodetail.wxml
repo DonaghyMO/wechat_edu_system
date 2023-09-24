@@ -1,0 +1,8 @@
+<!--pages/videodetail/videodetail.wxml-->
+<view class="video-container">
+    <view class="video-title">{{title}}</view>
+    <video  object-fit="cover" style="width: 100%;" src="{{ videoUrl }}" controls autoplay></video>
+    <view class="video-info">
+        <view class="video-description"> {{description}}</view>
+    </view>
+</view>

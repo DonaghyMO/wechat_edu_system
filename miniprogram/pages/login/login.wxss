@@ -1,0 +1,72 @@
+/* login-register.wxss */
+
+  
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff; /* 枣红色背景 */
+  }
+  .title-container{
+      display: inline;
+  }
+  
+  .button-wraper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  /* 新样式 */
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .nick-name {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .input-field {
+    width: 80%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+  
+  .login-button {
+    width: 80%;
+    height: 40px;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .register-link {
+    margin-top: 20px;
+  }
+  
+  .register-link text {
+    font-size: 14px;
+    color: #007aff;
+  }
+  

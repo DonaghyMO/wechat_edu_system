@@ -1,0 +1,14 @@
+<!--pages/resource/resource.wxml-->
+<scroll-view class="list-container" scroll-y="true" bindscrolltolower="loadMore">
+    <view wx:for="{{ resourceList }}" wx:key="index" class="list-item">
+        <view class="resource-text" bindtap="resourceDetail" data-resource_type="{{resourceType}}" data-resource_id="{{item.resource_id}}">
+            <image wx:if="{{ resourceType=='video' }}" class="resource-icon" src="/images/video.svg"></image>
+            <image wx:elif="{{ resourceType=='audio' }}" class="resource-icon" src="/images/audio.svg"></image>
+            <image wx:elif="{{ resourceType=='text' }}" class="resource-icon" src="/images/text.svg"></image>     
+            <text wx:if="{{ resourceType=='video' }}" class="resource-title">视频：</text>
+            <text wx:elif="{{ resourceType=='audio' }}" class="resource-title" >音频：</text>
+            <text wx:elif="{{ resourceType=='text' }}" class="resource-title" >文本：</text>     
+            <text class="resource-content">{{item.title}}</text>
+        </view>
+    </view>
+</scroll-view>

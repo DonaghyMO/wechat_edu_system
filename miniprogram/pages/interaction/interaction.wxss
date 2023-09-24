@@ -1,0 +1,45 @@
+/* pages/interaction/interaction.wxss */
+page{
+    background-color: #c45a65;
+}
+ /* 通知列表容器样式 */
+ .teacher-list {
+    background-color: #4c1f24; /* 中国红 */
+    padding: 10px;
+  }
+  
+  /* 单个通知项样式 */
+  .teacher-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #FFF; /* 白色背景 */
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  /* 通知图标样式 */
+  .teacher-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  /* 通知文本容器样式 */
+  .teacher-text {
+    flex: 1;
+  }
+  
+  /* 通知标题样式 */
+  .teacher-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* 深灰色 */
+    margin-bottom: 5px;
+  }
+  
+  /* 通知内容样式 */
+  .teacher-content {
+    font-size: 14px;
+    color: #666; /* 中灰色 */
+  }

@@ -1,0 +1,24 @@
+/* pages/videodetail/videodetail.wxss */
+.video-container{
+    margin-top:0%
+}
+.video-info{
+    background-color: rgb(231, 231, 229);
+    border-radius: 20px;
+    border-color: rgb(231, 231, 229);
+    white-space: normal;
+}
+.video-title{
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+.video-decription{
+    font-size: 10px;
+    color: rgb(37, 34, 34);
+    white-space: normal;
+}
+.comment-container{
+    font-size: 10px;
+    color: rgb(37, 34, 34);
+}
