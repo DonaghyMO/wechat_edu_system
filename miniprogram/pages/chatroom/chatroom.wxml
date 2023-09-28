@@ -1,10 +1,12 @@
 <view class="chat-container">
   <scroll-view scroll-y="true" class="chat-messages" scroll-into-view="{{ scrollIntoView }}">
     <block wx:for="{{ messages }}" wx:key="id">
-      <view id="message_{{ item.id }}" class="message-item right">
+      <view wx:if="{{item.user_type==meType}}" id="message_{{ item.id }}" class="message-item-right">
         <text class="message-text">{{ item.content }}</text>
       </view>
-      
+      <view wx:if="{{item.user_type!=meType}}" id="message_{{ item.id }}" class="message-item-left">
+        <text class="message-text">{{ item.content }}</text>
+      </view>
     </block>
   </scroll-view>
 

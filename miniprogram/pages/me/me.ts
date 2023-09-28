@@ -15,21 +15,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-        const userInfo = wx.getStorageSync("userInfo")
-        var userType2Chinese = ""
-        if(userInfo.userType==="teacher"){
-            userType2Chinese = "教师";
-        }else{
-            userType2Chinese = "学生";
-        }
-
-        this.setData({
-            avatarUrl:userInfo.userAvatarUrl,
-            username:userInfo.username,
-            userType:userInfo.userType,
-            nickName:userInfo.nickName,
-            userType2Chinese:userType2Chinese
-        })
     },
 
     /**
@@ -65,6 +50,21 @@ Page({
             }
 
         });
+        // 修改用戶信息
+        const userInfo = wx.getStorageSync("userInfo")
+        var userType2Chinese = ""
+        if(userInfo.userType==="teacher"){
+            userType2Chinese = "教师";
+        }else{
+            userType2Chinese = "学生";
+        }
+        this.setData({
+            avatarUrl:userInfo.userAvatarUrl,
+            username:userInfo.username,
+            userType:userInfo.userType,
+            nickName:userInfo.nickName,
+            userType2Chinese:userType2Chinese
+        })
     },
 
     /**
@@ -102,7 +102,14 @@ Page({
 
     },
     clearStorage() {
-        wx.removeStorageSync('userInfo');
+        wx.clearStorage({
+            success: function (res) {
+              console.log('缓存数据清除成功');
+            },
+            fail: function (res) {
+              console.error('缓存数据清除失败', res);
+            }
+        });
         wx.navigateTo({
             "url": "/pages/pre_login/pre_login"
         })

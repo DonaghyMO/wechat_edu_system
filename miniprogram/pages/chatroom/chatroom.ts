@@ -5,25 +5,25 @@ Page({
      */
     data: {
         chatContents: [],
-        meId: 1,
+        meType: 1,
         message: "",
         messages: [],
         scrollIntoView: '',
-        chatId:1,
+        chatId: 1,
         inputMessage: '',
     },
     onInput: function (e) {
         this.setData({
-            inputMessage: e.detail.value, 
+            inputMessage: e.detail.value,
         });
     },
     sendMessage: function () {
-        if (this.data.inputMessage == ""){
+        if (this.data.inputMessage == "") {
             return
         }
         const message = {
             id: new Date().getTime(),
-            user_id : wx.getStorageSync("userInfo").userId,
+            user_id: wx.getStorageSync("userInfo").userId,
             user_type: wx.getStorageSync("userInfo").userType,
             content: this.data.inputMessage,
         };
@@ -34,29 +34,83 @@ Page({
             inputMessage: '',
             scrollIntoView: `message_${message.id}`,
         });
-        console.log(this.data.messages)
+        wx.sendSocketMessage({
+            data: JSON.stringify({
+                "message": message,
+            }),
+            success: function (res) {
+                console.log('消息发送成功:', message);
+            },
+            fail: function (res) {
+                console.error('消息发送失败:', res);
+            }
+        })
     },
+    initWebSocket: function () {
+
+        wx.onSocketOpen(function (res) {
+            console.log('WebSocket 连接已打开');
+        });
+
+        wx.onSocketClose(function (err) {
+            console.log('WebSocket 连接已断开' + err);
+        })
+
+        // 监听 WebSocket 收到消息事件
+        wx.onSocketMessage((res) => {
+            const data = JSON.parse(res.data)
+            if (data.user_type === this.data.meType){
+                return
+            }
+            const messages = this.data.messages.concat(data);
+            
+            this.setData({
+                messages: messages,
+                scrollIntoView: `message_${data.id}`
+            });
+            
+            
+        })
+  
+    },
+
     /**
      * 生命周期函数--监听页面显示
      */
     onLoad: function (options) {
-        let student_id = options.student_id
-        let teacher_id = options.teacher_id
-        let url = getApp().getDomainName() + "wechat/get_chat_content?teacher_id=" + teacher_id + "&student_id=" + student_id;
+        let student_id = options.student_id;
+        let teacher_id = options.teacher_id;
+        let room_id = teacher_id + "_" + student_id;
+
+        // http方式获取历史聊天记录
         wx.request({
-            url: url,
+            url: getApp().getDomainName() + "chat/get_chat_logs/" + room_id + "/",
             method: "GET",
-            success: (res) => {
+            success: res => {
+                let data = res.data.content;
+                var scroll_id;
+                if (data.length > 0) {
+                    scroll_id = `message_${data[data.length - 1].id}`;
+                } else {
+                    scroll_id = `message_1`
+                }
                 this.setData({
-                    chatContents: res.data.content,
-                    meId: wx.getStorageSync("userInfo").userId,
-                    chatId: res.data.id,
+                    messages: data,
+                    scrollIntoView: scroll_id,
+                    meType: wx.getStorageSync('userInfo').userType
                 })
+                // 获取websocket
+                let ws_url = getApp().getWebSocketName() + room_id + "/";
+                wx.connectSocket({
+                    url: ws_url,
+                });
+                this.initWebSocket()
             },
-            fail: (error) => {
-                console.log(error)
+            fail: err => {
+                console.error(err)
             }
         })
+
     },
 
     /**
@@ -77,14 +131,21 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide() {
-        
+
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
     onUnload() {
-        console.log(this.data.messages)
+        wx.closeSocket({
+            success: function (res) {
+                console.log('WebSocket 连接已关闭');
+            },
+            fail: function (res) {
+                console.error('关闭 WebSocket 连接失败:', res);
+            }
+        });
     },
 
     /**
@@ -105,6 +166,10 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage() {
+
+    },
+
+    getWebSocket() {
 
     }
 })

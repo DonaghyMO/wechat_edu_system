@@ -1,11 +1,16 @@
 // app.ts
 App<IAppOption>({
   globalData: {},
-  getDomainName(){
+    getDomainName(){
     const app=getApp();
-    app.globalData.domain = "http://192.168.206.130:2030/";
-   return app.globalData.domain;
+    app.globalData.domain = "https://run.yuanchuangyuan.cn/";
+    return app.globalData.domain;
 },
+    getWebSocketName(){
+        const app=getApp();
+        app.globalData.wsUrl = "wss://run.yuanchuangyuan.cn/ws/chat/";
+    return app.globalData.wsUrl;
+    },
 
   onLaunch() {
     // 展示本地存储能力
