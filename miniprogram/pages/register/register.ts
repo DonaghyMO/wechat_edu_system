@@ -5,6 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        page_texts:{},
         userAvatarUrl: "",
         userNickName: "",
         password: "",
@@ -80,6 +81,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
+        this.setData({
+            page_texts:wx.getStorageSync("language_json").register
+        })
         const pageUrl = wx.getStorageSync("userAvatarUrl")
         const userName = wx.getStorageSync("nickName")
         console.log(userName)

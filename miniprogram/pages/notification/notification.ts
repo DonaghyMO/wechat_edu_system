@@ -5,6 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        page_texts:{},
         Notices:[]
     },
     deleteNotification(event){
@@ -29,7 +30,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-
+        this.setData({
+            page_texts:wx.getStorageSync("language_json").notification
+        })
     },
 
     /**

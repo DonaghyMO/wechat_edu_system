@@ -1,0 +1,8 @@
+<!--pages/language/language.wxml-->
+<view class="button-container">
+    <button class="login-button" bindtap="navigateToPreLogin" data-language="chinese">中文</button>
+    <button class="login-button" bindtap="navigateToPreLogin" data-language="english">English 
+    </button>
+    <button class="login-button" bindtap="navigateToPreLogin" data-language="korea">한국인 
+    </button>
+</view>

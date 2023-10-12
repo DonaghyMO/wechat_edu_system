@@ -11,7 +11,7 @@
   </scroll-view>
 
   <view class="input-box">
-    <input class="input-field" placeholder="请输入消息" bindinput="onInput" value="{{inputMessage}}"></input>
-    <button class="send-button" bindtap="sendMessage">发送</button>
+    <input class="input-field" placeholder="{{page_texts.input_message}}" bindinput="onInput" value="{{inputMessage}}"></input>
+    <button class="send-button" bindtap="sendMessage">{{page_texts.send}}</button>
   </view>
 </view>

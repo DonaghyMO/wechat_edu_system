@@ -1,23 +1,34 @@
-// pages/pre_login/pre_login.ts
+// pages/language/language.ts
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    page_texts : {}
+
   },
-  navigateToLogin(event){
-    const user_type = event.currentTarget.dataset.user_type;
-    wx.navigateTo({
-        url:"/pages/login/login?user_type="+user_type,
+  navigateToPreLogin(event){
+    const language = event.currentTarget.dataset.language;
+    wx.setStorageSync('language', language);
+    wx.request({
+        url: getApp().getDomainName()+"resource/download/language/"+language+".json",
+        success: res => {
+            const data = res.data;
+            console.log(data)
+            wx.setStorageSync('language_json',data);
+            wx.navigateTo({
+                url:"/pages/pre_login/pre_login",
+            })
+        },
+        fail:err=>{
+            console.error(err)
+        }
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-      
   },
 
   /**
@@ -31,9 +42,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.setData({
-        "page_texts":wx.getStorageSync("language_json").pre_login
-    })
+
   },
 
   /**

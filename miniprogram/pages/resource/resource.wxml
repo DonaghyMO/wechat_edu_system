@@ -5,9 +5,9 @@
             <image wx:if="{{ resourceType=='video' }}" class="resource-icon" src="/images/video.svg"></image>
             <image wx:elif="{{ resourceType=='audio' }}" class="resource-icon" src="/images/audio.svg"></image>
             <image wx:elif="{{ resourceType=='text' }}" class="resource-icon" src="/images/text.svg"></image>     
-            <text wx:if="{{ resourceType=='video' }}" class="resource-title">视频：</text>
-            <text wx:elif="{{ resourceType=='audio' }}" class="resource-title" >音频：</text>
-            <text wx:elif="{{ resourceType=='text' }}" class="resource-title" >文本：</text>     
+            <text wx:if="{{ resourceType=='video' }}" class="resource-title">{{page_texts.video}}：</text>
+            <text wx:elif="{{ resourceType=='audio' }}" class="resource-title" >{{page_texts.audio}}：</text>
+            <text wx:elif="{{ resourceType=='text' }}" class="resource-title" >{{page_texts.text}}：</text>     
             <text class="resource-content">{{item.title}}</text>
         </view>
     </view>

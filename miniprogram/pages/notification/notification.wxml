@@ -2,7 +2,7 @@
     <view wx:for="{{Notices}}" wx:key="index" class="notification-item">
         <image class="notification-icon" src="/images/notification.svg"></image>
         <view class="notification-text" bindtap="deleteNotification" data-notification_id="{{item.id}}">
-            <text class="notification-title">通知</text>
+            <text class="notification-title">{{page_texts.notification}}</text>
             <text class="notification-content">{{item.content}}</text>
         </view>
     </view>

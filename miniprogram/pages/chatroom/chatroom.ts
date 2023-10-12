@@ -4,6 +4,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        page_texts:{},
         chatContents: [],
         meType: 1,
         message: "",
@@ -78,6 +79,9 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onLoad: function (options) {
+        this.setData({
+            page_texts:wx.getStorageSync("language_json").chatroom
+        })
         let student_id = options.student_id;
         let teacher_id = options.teacher_id;
         let room_id = teacher_id + "_" + student_id;

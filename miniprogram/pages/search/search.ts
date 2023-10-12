@@ -5,7 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        resourceList : [] 
+        resourceList : [] ,
+        page_texts:{}
     },
     resourceDetail(event){
         const dataset = event.currentTarget.dataset;
@@ -79,7 +80,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-
+        
     },
 
     /**
@@ -93,7 +94,9 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        this.setData({
+            page_texts:wx.getStorageSync("language_json").search
+        })
     },
 
     /**

@@ -1,6 +1,6 @@
 <view class="search-bar">
-    <input type="text" placeholder="请输入关键词" bindinput="onInput" bindconfirm="onConfirm" value="{{searchKeyword}}" />
-    <button bindtap="onSearch">搜索</button>
+    <input type="text" placeholder="{{page_texts.keyword}}" bindinput="onInput" bindconfirm="onConfirm" value="{{searchKeyword}}" />
+    <button bindtap="onSearch">{{page_texts.search}}</button>
 </view>
 
 
@@ -11,9 +11,9 @@
             <image wx:if="{{ item.type=='video' }}" class="resource-icon" src="/images/video.svg"></image>
             <image wx:elif="{{ item.type=='audio' }}" class="resource-icon" src="/images/audio.svg"></image>
             <image wx:elif="{{ item.type=='text' }}" class="resource-icon" src="/images/text.svg"></image>     
-            <text wx:if="{{ item.type=='video' }}" class="resource-title">视频：</text>
-            <text wx:elif="{{ item.type=='audio' }}" class="resource-title" >音频：</text>
-            <text wx:elif="{{ item.type=='text' }}" class="resource-title" >文本：</text>     
+            <text wx:if="{{ item.type=='video' }}" class="resource-title">{{page_texts.video}}：</text>
+            <text wx:elif="{{ item.type=='audio' }}" class="resource-title" >{{page_texts.audio}}：</text>
+            <text wx:elif="{{ item.type=='text' }}" class="resource-title" >{{page_texts.text}}：</text>     
             <text class="resource-content">{{item.title}}</text>
         </view>
     </view>

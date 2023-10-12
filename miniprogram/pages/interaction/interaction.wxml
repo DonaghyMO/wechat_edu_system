@@ -3,8 +3,8 @@
         <image wx:if="{{item.user_type=='teacher'}}" class="user-icon" src="/images/teacher.svg"></image>
         <image wx:if="{{item.user_type=='student'}}"class="user-icon" src="/images/student.svg"></image>
         <view class="user-text" bindtap="interactUser" data-user_id="{{item.user_id}}">
-            <text wx:if="{{item.user_type=='teacher'}}" class="user-title">教师</text>
-            <text wx:if="{{item.user_type=='student'}}" class="user-title">学生</text>
+            <text wx:if="{{item.user_type=='teacher'}}" class="user-title">{{page_texts.teacher}}</text>
+            <text wx:if="{{item.user_type=='student'}}" class="user-title">{{page_texts.student}}</text>
             <text class="user-content">{{item.username}}</text>
         </view>
     </view>

@@ -2,15 +2,15 @@
   <image src="{{userAvatarUrl}}" class="logo"></image>
   <text class="app-name">{{userNickName}}</text>
 
-  <input placeholder="用户名" class="input-field" bindinput="inputUsername"></input>
-  <input type="password" placeholder="密码" class="input-field" bindinput="inputPassword"></input>
-  <input type="password" placeholder="确认密码" class="input-field" bindinput="inputConfirmPassword"></input>
-  <input placeholder="教师邀请码（学生用户忽略）" class="input-field" bindinput="inputInviteCode"></input>
+  <input placeholder="{{page_texts.username}}" class="input-field" bindinput="inputUsername"></input>
+  <input type="password" placeholder="{{page_texts.password}}" class="input-field" bindinput="inputPassword"></input>
+  <input type="password" placeholder="{{page_texts.confirm}}" class="input-field" bindinput="inputConfirmPassword"></input>
+  <input placeholder="{{page_texts.invite_code}}" class="input-field" bindinput="inputInviteCode"></input>
 
-  <button class="register-button" bindtap="register">注册</button>
+  <button class="register-button" bindtap="register">{{page_texts.register}}</button>
 
   <view class="login-link">
-    <text>已有账号？</text>
-    <navigator url="/pages/login/login">登录</navigator>
+    <text>{{page_texts.exist_account}}？</text>
+    <navigator url="/pages/login/login">{{page_texts.login}}</navigator>
   </view>
 </view>

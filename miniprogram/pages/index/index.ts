@@ -5,6 +5,7 @@
 Page({
     data:{
         notices:[],
+        page_texts:{},
         searchKeyword: '', // 用于存储搜索关键词
     },
     globalData:{
@@ -31,8 +32,12 @@ Page({
     },
     onLoad: function(){
         // 小程序第一次加载首页时全局设置一个请求拦截器
+        
     },
     onShow: function(){
+        this.setData({
+            page_texts:wx.getStorageSync("language_json").index
+        })
         var user_id = wx.getStorageSync("userInfo").userId;
         var user_type = wx.getStorageSync("userInfo").userType;
         var app = getApp()

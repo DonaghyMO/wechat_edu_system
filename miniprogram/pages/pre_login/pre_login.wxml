@@ -1,4 +1,5 @@
 <view class="button-container">
-    <button class="login-button" bindtap="navigateToLogin" data-user_type="teacher">教师登录</button>
-    <button class="login-button" bindtap="navigateToLogin" data-user_type="student">学生登录</button>
+    <button class="login-button" bindtap="navigateToLogin" data-user_type="teacher">{{page_texts.teacher_login}}</button>
+    <button class="login-button" bindtap="navigateToLogin" data-user_type="student">{{page_texts.student_login}}
+    </button>
 </view>

@@ -6,6 +6,7 @@ Page({
    */
   data: {
     users:[],
+    page_texts:{}
   },
   interactUser(param){
     const user_type = wx.getStorageSync("userInfo").userType;
@@ -27,6 +28,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
+    this.setData({
+        page_texts:wx.getStorageSync("language_json").interaction
+    })
   },
 
   /**

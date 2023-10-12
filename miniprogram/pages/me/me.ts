@@ -4,6 +4,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        page_texts:{},
         notices: [],
         avatarUrl:"",
         username:"",
@@ -15,6 +16,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
+        
     },
 
     /**
@@ -28,6 +30,9 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+        this.setData({
+            page_texts:wx.getStorageSync("language_json").me
+        })
         var user_id = wx.getStorageSync("userInfo").userId;
         var user_type = wx.getStorageSync("userInfo").userType;
         var app = getApp()
@@ -111,7 +116,7 @@ Page({
             }
         });
         wx.navigateTo({
-            "url": "/pages/pre_login/pre_login"
+            "url": "/pages/language/language"
         })
     },
 })

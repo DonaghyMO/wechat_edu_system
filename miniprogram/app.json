@@ -13,7 +13,8 @@
     "pages/notification/notification",
     "pages/chatroom/chatroom",
     "pages/register/register",
-    "pages/pre_login/pre_login"
+    "pages/pre_login/pre_login",
+    "pages/language/language"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,21 +29,19 @@
   "tabBar": {
     "list": [{
         "pagePath": "pages/index/index",
-        "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-activate.png"
     },
     {
         "pagePath": "pages/search/search",
-        "text": "搜索",
         "iconPath": "images/search.png",
         "selectedIconPath": "images/search_activate.png" 
     },
     {
         "pagePath": "pages/me/me",
-        "text": "我",
         "iconPath": "images/me.png",
-        "selectedIconPath": "images/me_activate.png"}
+        "selectedIconPath": "images/me_activate.png"
+    }
     ]
     }
 }

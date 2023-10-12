@@ -28,7 +28,7 @@ App<IAppOption>({
       const userInfo = wx.getStorageSync("userInfo");
       if (!userInfo){
           wx.reLaunch({
-              url: '/pages/pre_login/pre_login'
+              url: '/pages/language/language'
           })
       }
   }

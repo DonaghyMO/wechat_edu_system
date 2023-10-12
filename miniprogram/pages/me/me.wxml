@@ -1,7 +1,7 @@
 <view class="notice-container1">
     <swiper bindtap="navigateToNotification" class="notice-container" vertical="true" interval="5000" autoplay="true" style="z-index: 999;">
         <swiper-item class="notice-item" wx:for="{{notices}}" wx:key="index">
-            通知：{{item.content}}
+            {{page_texts.notification}}：{{item.content}}
         </swiper-item>
     </swiper>
 </view>
@@ -14,19 +14,19 @@
         </view>
     </view>
     <view class="text-info">
-        <text class="title">用户名：</text>
+        <text class="title">{{page_texts.username}}：</text>
         <text class="content">{{username}}</text>
     </view>
     <view class="text-info">
-        <text class="title">微信昵称：</text>
+        <text class="title">{{page_texts.wechat_name}}：</text>
         <text class="content">{{nickName}}</text>
     </view>
     <view class="text-info">
-        <text class="title">用户类别：</text>
+        <text class="title">{{page_texts.user_type}}：</text>
         <text class="content">{{userType2Chinese}}</text>
     </view>
 </view>
 
 <view class="buttonContainer">
-    <button bindtap="clearStorage">登出</button>
+    <button bindtap="clearStorage">{{page_texts.logout}}</button>
 </view>

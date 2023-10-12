@@ -1,5 +1,6 @@
 Page({
     data: {
+        page_texts:{},
       resourceList: [], // 资源列表数据
        resourceType:""
     },
@@ -21,6 +22,7 @@ Page({
     onLoad: function (options) {
         this.setData({
             'resourceType':options.type,
+            "page_texts":wx.getStorageSync("language_json").resource
         })
         var url = getApp().getDomainName()+"wechat/resource_list?resource_type="+this.data.resourceType
         wx.request({

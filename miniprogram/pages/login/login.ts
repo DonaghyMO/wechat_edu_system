@@ -8,7 +8,8 @@ Page({
         userNickname:'',//用户昵称
         userType:"",
         username:"",
-        password:""
+        password:"",
+        page_texts:{}
     },
     inputUsername: function (e) {
         this.setData({
@@ -64,7 +65,10 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
+        this.setData({
+            page_texts:wx.getStorageSync("language_json").login
+        })
+        console.log(wx.getStorageSync("language_json").login)
         const user_type = options.user_type
         // 获取用户信息
         wx.getUserInfo({

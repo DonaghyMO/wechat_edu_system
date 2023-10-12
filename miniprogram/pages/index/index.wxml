@@ -2,7 +2,7 @@
 <view class="notice-container1">
     <swiper bindtap="navigateToNotification" class="notice-container" vertical="true" interval="5000" autoplay="true" style="z-index: 999;">
         <swiper-item class="notice-item" wx:for="{{notices}}" wx:key="index">
-            通知：{{item.content}}
+            {{page_texts.notification}}：{{item.content}}
         </swiper-item>
     </swiper>
 </view>
@@ -25,25 +25,25 @@
     <view class="grid-item">
         <view class="grid-content" bindtap="navigateToResource" data-resource_type="audio">
             <image src="/images/audio.svg" class="grid-image"></image>
-            <text class="grid-text">音频</text>
+            <text class="grid-text">{{page_texts.audio}}</text>
         </view>
     </view>
     <view class="grid-item">
         <view class="grid-content" bindtap="navigateToResource" data-resource_type="video">
             <image src="/images/video.svg" class="grid-image"></image>
-            <text class="grid-text">视频</text>
+            <text class="grid-text">{{page_texts.video}}</text>
         </view>
     </view>
     <view class="grid-item">
         <view class="grid-content" bindtap="navigateToResource" data-resource_type="text">
             <image src="/images/text.svg" class="grid-image"></image>
-            <text class="grid-text">文本</text>
+            <text class="grid-text">{{page_texts.text}}</text>
         </view>
     </view>
     <view class="grid-item">
         <view class="grid-content" bindtap="navigateToInteract">
             <image src="/images/interaction.svg" class="grid-image"></image>
-            <text class="grid-text">互动</text>
+            <text class="grid-text">{{page_texts.interaction}}</text>
         </view>
     </view>
 </view>
