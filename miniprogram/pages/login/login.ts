@@ -64,6 +64,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        
         const user_type = options.user_type
         // 获取用户信息
         wx.getUserInfo({

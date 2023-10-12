@@ -1,4 +1,5 @@
 <!--pages/login/login.wxml-->
+
 <view class="login-container">
   <image src="{{userAvatarUrl}}" class="logo"></image>
   <text class="nick-name">欢迎你：{{ userNickname }}</text>
